@@ -1,0 +1,13 @@
+
+vlib ${TP_PATH}/lib/lib_VHDL
+
+vmap lib_VHDL ${TP_PATH}/lib/lib_VHDL 
+
+vcom +acc -work lib_VHDL GENECOND.vhd
+vcom +acc -work lib_VHDL PC.vhd
+vcom +acc -work lib_VHDL PO.vhd
+vcom +acc -work lib_VHDL RAM.vhd
+vcom +acc -work lib_VHDL ROM.vhd
+vcom +acc -work lib_VHDL UAL.vhd
+vcom +acc -work lib_VHDL uC.vhd
+vcom +acc -work lib_VHDL uP.vhd

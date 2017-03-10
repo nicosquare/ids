@@ -1,0 +1,198 @@
+# //  ModelSim SE-64 10.2c Jul 18 2013 Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vsim -voptargs=+acc lib_BENCH.bench_filter
+# vsim -voptargs=+acc lib_BENCH.bench_filter 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading modelsim_lib.util(body)
+# Loading work.bench_filter(arch)#1
+# Loading lib_vhdl.filter(a)#1
+# Loading lib_vhdl.delay_line(a)#1
+# Loading lib_vhdl.coeff_ram(arch)#1
+# Loading lib_vhdl.mult(a)#1
+# Loading lib_vhdl.accu(a)#1
+# Loading lib_vhdl.buff(a)#1
+# Loading lib_vhdl.fsm(a)#1
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_convst has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_rd has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_wr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_ldac has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_clr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Ram_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_sample_shift has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Accu_ctrl has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Buff_OE has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/bench_filter/CLK \
+sim:/bench_filter/RESET \
+sim:/bench_filter/Filter_In \
+sim:/bench_filter/Filter_Out \
+sim:/bench_filter/ADC_eocb \
+sim:/bench_filter/ADC_convstb \
+sim:/bench_filter/ADC_rdb \
+sim:/bench_filter/ADC_csb \
+sim:/bench_filter/DAC_wrb \
+sim:/bench_filter/DAC_csb \
+sim:/bench_filter/DAC_ldacb \
+sim:/bench_filter/DAC_clrb \
+sim:/bench_filter/Buff_OE \
+sim:/bench_filter/ADC_convstb_delayed \
+sim:/bench_filter/ADC_eocb_delayed \
+sim:/bench_filter/uC_address \
+sim:/bench_filter/uC_data_in \
+sim:/bench_filter/uC_wb \
+sim:/bench_filter/uC_enable \
+sim:/bench_filter/Accu_out \
+sim:/bench_filter/filter_rom
+# ** Warning: (vsim-WLF-5022) WLF summary optimizations disabled.  This will adversely affect wave draw performance.
+run -all
+# ** Note: init_signal_spy [bench.vhd] : Mirroring the value of '/bench_filter/DUT/Accu_out' onto '/bench_filter/accu_out'.
+# ** Note: init_signal_spy [bench.vhd] : Mirroring the value of '/bench_filter/DUT/Buff_OE' onto '/bench_filter/buff_OE'.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench_filter/DUT/U2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench_filter/DUT/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /bench_filter/DUT/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /bench_filter/DUT/U2
+# Causality operation skipped due to absence of debug database file
+# Break key hit 
+# Simulation stop requested.
+restart -f
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_convst has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_rd has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_wr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_ldac has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_clr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Ram_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_sample_shift has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Accu_ctrl has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Buff_OE has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-WLF-5022) WLF summary optimizations disabled.  This will adversely affect wave draw performance.
+vsim lib_BENCH.bench_filter
+# vsim lib_BENCH.bench_filter 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading modelsim_lib.util(body)
+# Loading work.bench_filter(arch)#1
+# Loading lib_vhdl.filter(a)#1
+# Loading lib_vhdl.delay_line(a)#1
+# Loading lib_vhdl.coeff_ram(arch)#1
+# Loading lib_vhdl.mult(a)#1
+# Loading lib_vhdl.accu(a)#1
+# Loading lib_vhdl.buff(a)#1
+# Loading lib_vhdl.fsm(a)#1
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_convst has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_rd has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/ADC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_wr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_cs has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_ldac has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/DAC_clr has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Ram_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_Address(4 downto 0) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Delay_Line_sample_shift has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Accu_ctrl has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench_filter/DUT/U6/Buff_OE has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/bench_filter/DUT/CLK \
+sim:/bench_filter/DUT/RESET \
+sim:/bench_filter/DUT/Filter_In \
+sim:/bench_filter/DUT/Filter_Out \
+sim:/bench_filter/DUT/ADC_eoc \
+sim:/bench_filter/DUT/ADC_convst \
+sim:/bench_filter/DUT/ADC_rd \
+sim:/bench_filter/DUT/ADC_cs \
+sim:/bench_filter/DUT/DAC_wr \
+sim:/bench_filter/DUT/DAC_cs \
+sim:/bench_filter/DUT/DAC_ldac \
+sim:/bench_filter/DUT/DAC_clr \
+sim:/bench_filter/DUT/uC_address \
+sim:/bench_filter/DUT/uC_data_in \
+sim:/bench_filter/DUT/uC_wb \
+sim:/bench_filter/DUT/uC_enable \
+sim:/bench_filter/DUT/Delay_Line_sample_shift \
+sim:/bench_filter/DUT/Accu_ctrl \
+sim:/bench_filter/DUT/Buff_OE \
+sim:/bench_filter/DUT/FSM_Buff_OE \
+sim:/bench_filter/DUT/Delay_Line_out \
+sim:/bench_filter/DUT/Mult_out \
+sim:/bench_filter/DUT/Accu_out \
+sim:/bench_filter/DUT/RAM_Address \
+sim:/bench_filter/DUT/FSM_Address \
+sim:/bench_filter/DUT/RAM_data_out \
+sim:/bench_filter/DUT/Delay_Line_Address
+# ** Warning: (vsim-WLF-5022) WLF summary optimizations disabled.  This will adversely affect wave draw performance.
+run
+# ** Note: init_signal_spy [bench.vhd] : Mirroring the value of '/bench_filter/DUT/Accu_out' onto '/bench_filter/accu_out'.
+# ** Note: init_signal_spy [bench.vhd] : Mirroring the value of '/bench_filter/DUT/Buff_OE' onto '/bench_filter/buff_OE'.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench_filter/DUT/U2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench_filter/DUT/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /bench_filter/DUT/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /bench_filter/DUT/U2
+run
+run
+run
+quit

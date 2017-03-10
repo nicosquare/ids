@@ -1,0 +1,27 @@
+#
+# FirstEncounter(TM) Clock Synthesis Technology File Format
+#
+
+#------------------------------------------------------------
+# Clock Root   : CLK
+# Clock Name   : CLK
+# Clock Period : 20ns
+#------------------------------------------------------------
+
+######################################################
+###          Example of file ###
+### To be completed according to your design ###
+######################################################
+
+AutoCTSRootPin io_CLK/Y
+Period         30ns
+MaxDelay       30ns  # default value
+MinDelay       0ns   # default value
+MaxSkew        200ps # default value
+SinkMaxTran    400ps # default value
+BufMaxTran     400ps # default value
+Buffer         CLKBU2 CLKBU4 CLKBU6 CLKBU8 CLKBU12 CLKBU15
+NoGating       NO
+DetailReport   YES
+END
+
