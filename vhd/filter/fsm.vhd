@@ -26,7 +26,7 @@ architecture A of FSM is
 
     	type   STATE is (INIT, CONV, LOAD, SET, FILTER);
     	signal Current_State, Next_State   : STATE;
-    	signal Tap_Number, Next_Tap_Number : std_logic_vector(4 downto 0);
+    	signal Tap_Number, Next_Tap_Number : unsigned(4 downto 0);
     
 	signal sig_CLK                     : std_logic;
 	signal sig_RESET                   : std_logic;
@@ -63,10 +63,6 @@ begin
 	DAC_ldac <= sig_DAC_ldac;
 	DAC_cs <= sig_DAC_cs;
 	DAC_clr <= sig_DAC_clr;
-
-    --concurrent
-  	
-		
 
     --process
 
@@ -122,14 +118,13 @@ begin
 		
 			next_state <= SET;
 
-		when LOAD => 
+		when SET => 
 			Accu_ctrl <= '1';
-		
+
 			next_state <= FILTER;
 
-     		end case;
-
 		when FILTER => 
+
 			if Tap_Number < 31 then
 				next_state <= current_state;
 				Next_Tap_Number <= Tap_Number + 1;
@@ -138,10 +133,10 @@ begin
 				next_state <= INIT;
 			end if;
 
-     		end case;
-
 		when others =>
 			next_state <= current_state;
+
+     		end case;
 
    	end process P_COMB;
 
