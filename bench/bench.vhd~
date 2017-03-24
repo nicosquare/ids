@@ -104,7 +104,7 @@ begin
 
 	CLK   <= not(CLK) after 10 ns;
 	RESET <= '1', '0' after 45 ns;
-	--ADC_eocb <= '1', '0' after 600 ns;
+	ADC_eocb <= '1', '0' after 600 ns;
 
 	uC_enable <= '1'; --uC pas utilise
 	uC_wb <= '1'; --uC pas utilise
@@ -172,12 +172,12 @@ begin
 
 
 	-- Test le bon fonctionnement du CNA;
-    process_ADC : process(ADC_Convstb)
-    begin
-        if ADC_Convstb'event and ADC_Convstb = '0' then
-            ADC_eocb <= '1', '0' after 300 ns, '1' after 400 ns;
-        end if;
-    end process;  -- process_ADC
+  --  process_ADC : process(ADC_Convstb)
+    --begin
+      --  if ADC_Convstb'event and ADC_Convstb = '0' then
+        --    ADC_eocb <= '1', '0' after 300 ns, '1' after 400 ns;
+   --     end if;
+   -- end process;  -- process_ADC
 
 
 --NB: les deux process suivant sont donnes "en l'etat" comme reference

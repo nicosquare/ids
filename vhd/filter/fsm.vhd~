@@ -102,7 +102,7 @@ begin
 				next_state <= current_state;
 				Next_Tap_Number <= Tap_Number + 1;
 			elsif	Tap_Number = 31 then	
-				buff_OE <= '1';
+				sig_buff_OE <= '1';
 				next_state <= INIT;
 			end if;
 
