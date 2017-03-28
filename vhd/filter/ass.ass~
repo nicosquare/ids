@@ -1,0 +1,56 @@
+init:
+
+	RESET
+	LI R1, 0 -- Compteur
+	LI R2, 128 -- Addresse
+	IN R3 -- Config
+
+	MOVA R3
+	SHL R4, 4
+	MOVA R4
+	MOVB R2	
+	ADD R2
+
+loop:
+
+	MOVA R2
+	MOVB R1
+	LW R5 --A
+
+	LI R6, 3
+	MOVA R6
+	SHL R6, 13
+	MOVA R6
+	NEGA R6 --c
+
+	MOVA R6	
+	MOVB R5
+	AND R5
+
+	MOVA R1
+	SHL R7, 7
+	MOVA R7
+	MOVB R5
+	OR R5
+
+	OUT R5
+
+	MOVA R1
+	LI R4, 31
+	MOVB R4
+	SUB R4
+	MOVA R4 
+	MOVB (end-pc)
+	BREQ
+
+	MOVA R1
+	INC R1
+	LI R4, 0
+	MOVA R4
+	MOVB loop
+	BAEQ
+	
+end:
+
+	 		
+
