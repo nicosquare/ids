@@ -49,9 +49,7 @@ architecture arch of ROM is
 	20 => "1100101" & "000000100",		-- LI R5, 4
 	21 => "1001000" & "000100101",		-- BAEQ R4,R5
 
-	22 => x"F0F0"				-- NOP
-	
-	end:
+	22 => x"F0F0",				-- NOP
 	
         others => x"F0F0"               -- NOP
         );
