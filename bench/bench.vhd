@@ -2,6 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
+use ieee.numeric_std_unsigned.all;
+use ieee.std_logic_unsigned.all;
+use std.textio.all; 
+use ieee.std_logic_arith.all;
+
 
 library modelsim_lib;
 use modelsim_lib.util.all;
@@ -146,29 +151,6 @@ begin
         	init_signal_spy("/bench_filter/DUT/Buff_OE", "buff_OE",1,-1);
 	wait;
       	end process spy_process;
-  
-
-	Filter_in_rep_impuls: process 
-	 	variable j :natural range 0 to 31 ; 
-		begin  -- process Filter_in_rep_impuls
-		--wait until enable='1';
-
-		for i in 0 to 31 loop
-	  
-	  	wait until ADC_eocb='0';
-		j:=i;
-	  	if i=0  then
-	    		Filter_in<="00000001";
-		else
-	    		Filter_in<=(others=>'0');
-	  	end if;
-	  	wait until buff_OE='1';
-		-- Completer le assert
-		--  assert (Accu_out(7 downto 0)= ?? )  report "error rep_impul" severity error;
-		end loop;  -- i
-	end process Filter_in_rep_impuls;
-
-
 
 
 	-- Test le bon fonctionnement du CNA;
@@ -180,40 +162,55 @@ begin
     end process;  -- process_ADC
 
 
---NB: les deux process suivant sont donnes "en l'etat" comme reference
---    de l'access aux fichiers en lecture/ecriture
---    leur fonctionnement n'est pas garanti
+	--Filter_in_rep_impuls: process 
+	-- 	variable j :natural range 0 to 31 ; 
+	--	begin  -- process Filter_in_rep_impuls
+	--	--wait until enable='1';
+
+	--	for i in 0 to 31 loop
+	  
+	--  	wait until ADC_eocb='0';
+	--	j:=i;
+	--  	if i=0  then
+	--  		Filter_in<="00000001";
+	--	else
+	--    		Filter_in<=(others=>'0');
+	--  	end if;
+	--  	wait until buff_OE='1';
+		-- Completer le assert
+		--  assert (Accu_out(7 downto 0)= ?? )  report "error rep_impul" severity error;
+	--	end loop;  -- i
+	--end process Filter_in_rep_impuls;
+
+	LECTURE : process
+		variable A: std_logic_vector(7 downto 0);	 -- variables à lire
+		variable f: real := 1.2*1000000.0; --1.2M
+		variable amp : real := 300000.0; --300K
+		variable T : real := 1.0/f;
+		variable ti : real := 0.0;
+		begin
+		A := (others=>'0');
+		while(true) loop
+			for i in 1 to 126 loop
+				wait until ADC_rdb='0' and ADC_csb='0';
+				A := conv_std_logic_vector(integer(50.0*SIN(2.0*MATH_PI*f*ti)), 8); 
+				Filter_in <= A;
+				ti := ti+T;
+				if i = 126 then
+					f := f * 0.5;
+				end if;
+			end loop;
+		end loop; 
+	end process LECTURE;
 
 
---LECTURE: process
--- variable L: line;	-- le type LINE est un pointeur
--- file ENTREES: text open READ_MODE is "entrees.dat";	-- fichier spécifié
--- variable A: std_logic_vector(7 downto 0);	 -- variables à lire
---begin
+	--Filter_in_rep_ech: process 
+	--begin
+	--	wait until ADC_rdb='0' and ADC_csb='0';
+	-- 	Filter_in <= "00000000", "00000001" after 100 ns;
+	--end process Filter_in_rep_ech;
 
--- wait on ADC_rdb='0' and ADC_csb='0';
--- readline(ENTREES, L);	-- lecture d'une nouvelle ligne dans le fichier
--- read(L, A);	-- lecture dans la ligne du 1er symbole => BIT
--- Filter_in <= A;	-- utilisation pour la simulation
---end process LECTURE;
-
-
-      
---ECRITURE: process
--- variable L: line;
--- file SORTIES: text open WRITE_MODE is "sorties.dat";
---begin
---  wait on DAC_wrb='0' and DAC_csb='0';
---  if DAC_ldacb='0' and DAC_clrb='1' then
---    write(L, Filter_Out);	-- écriture de S dans la ligne
---    writeline(SORTIES, L); -- écriture de la ligne dans le fichier
--- else
---   write("00000000", Filter_Out);	-- écriture de S dans la ligne
---    writeline(SORTIES, L); -- écriture de la ligne dans le fichier
---  end if;
---end process ECRITURE;
-
-      
 
 
 end architecture;  -- arch
+
