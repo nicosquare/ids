@@ -182,6 +182,7 @@ begin
 	--	end loop;  -- i
 	--end process Filter_in_rep_impuls;
 
+
 	LECTURE : process
 		variable A: std_logic_vector(7 downto 0);	 -- variables à lire
 		variable f: real := 1.2*1000000.0; --1.2M
