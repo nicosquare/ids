@@ -162,47 +162,47 @@ begin
     end process;  -- process_ADC
 
 
-	--Filter_in_rep_impuls: process 
-	-- 	variable j :natural range 0 to 31 ; 
-	--	begin  -- process Filter_in_rep_impuls
-	--	--wait until enable='1';
+	Filter_in_rep_impuls: process 
+	 	variable j :natural range 0 to 31 ; 
+		begin  -- process Filter_in_rep_impuls
+		--wait until enable='1';
 
-	--	for i in 0 to 31 loop
+		for i in 0 to 31 loop
 	  
-	--  	wait until ADC_eocb='0';
-	--	j:=i;
-	--  	if i=0  then
-	--  		Filter_in<="00000001";
-	--	else
-	--    		Filter_in<=(others=>'0');
-	--  	end if;
-	--  	wait until buff_OE='1';
-		-- Completer le assert
-		--  assert (Accu_out(7 downto 0)= ?? )  report "error rep_impul" severity error;
-	--	end loop;  -- i
-	--end process Filter_in_rep_impuls;
+	  	wait until ADC_eocb='0';
+		j:=i;
+	  	if i=0  then
+	  		Filter_in<="00000001";
+		else
+	    		Filter_in<=(others=>'0');
+	  	end if;
+	  	wait until buff_OE='1';
+		 Completer le assert
+		  assert (Accu_out(7 downto 0)= ?? )  report "error rep_impul" severity error;
+		end loop;  -- i
+	end process Filter_in_rep_impuls;
 
 
-	LECTURE : process
-		variable A: std_logic_vector(7 downto 0);	 -- variables à lire
-		variable f: real := 1.2*1000000.0; --1.2M
-		variable amp : real := 300000.0; --300K
-		variable T : real := 1.0/f;
-		variable ti : real := 0.0;
-		begin
-		A := (others=>'0');
-		while(true) loop
-			for i in 1 to 126 loop
-				wait until ADC_rdb='0' and ADC_csb='0';
-				A := conv_std_logic_vector(integer(50.0*SIN(2.0*MATH_PI*f*ti)), 8); 
-				Filter_in <= A;
-				ti := ti+T;
-				if i = 126 then
-					f := f * 0.5;
-				end if;
-			end loop;
-		end loop; 
-	end process LECTURE;
+	--LECTURE : process
+	--	variable A: std_logic_vector(7 downto 0);	 -- variables à lire
+	--	variable f: real := 1.2*1000000.0; --1.2M
+	--	variable amp : real := 300000.0; --300K
+	--	variable T : real := 1.0/f;
+	--	variable ti : real := 0.0;
+	--	begin
+	--	A := (others=>'0');
+	--	while(true) loop
+	--		for i in 1 to 126 loop
+	--			wait until ADC_rdb='0' and ADC_csb='0';
+	--			A := conv_std_logic_vector(integer(50.0*SIN(2.0*MATH_PI*f*ti)), 8); 
+	--			Filter_in <= A;
+	--			ti := ti+T;
+	--			if i = 126 then
+	--				f := f * 0.5;
+	--			end if;
+	--		end loop;
+	--	end loop; 
+	--end process LECTURE;
 
 
 	--Filter_in_rep_ech: process 
