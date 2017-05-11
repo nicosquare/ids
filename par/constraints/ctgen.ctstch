@@ -1,0 +1,20 @@
+AutoCTSRootPin      CSx
+MaxDelay            3000ps
+MinDelay            1000ps
+SinkMaxTran         1000ps
+BufMaxTran          1000ps
+MaxSkew             200ps
+NoGating            NO
+Buffer              BUF2 BUF4 BUF6 BUF8 BUF12 BUF15 INV0 INV1 INV2 INV3 INV4 INV8 INV10 INV12 INV15 CLKIN0 CLKIN1 CLKIN2 CLKIN3 CLKIN4 CLKIN6 CLKIN8 CLKIN10 CLKIN12 CLKIN15 CLKBU2 CLKBU4 CLKBU6 CLKBU8 CLKBU12 CLKBU15
+AutoCTSRootPin      io_CLK/Y
+# noms du plot et port de l’horloge
+MaxDelay            30ns
+MinDelay            0ps
+# delay entre le plot et la fin de l’arbre (FF)
+MaxSkew             200ps
+# différence max de delay entre les différentes bascules 
+NoGating            rising
+Buffer              BUF2 BUF4 BUF6 BUF8 BUF12 BUF15 
+# type de buffers pour   équilibrer l’arbre d’horloge
+End
+

@@ -1,0 +1,306 @@
+Checking out Encounter license ...
+Encounter_Digital_Impl_Sys_XL 10.1 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+This Encounter release has been compiled with OA version 22.04-p001.
+
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2010.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v10.10-s002_1 (64bit) 01/11/2011 22:20 (Linux 2.6)
+@(#)CDS: NanoRoute v10.10-s002 NR110110-1725/USR66-UB (database version 2.30, 109.2.1) {superthreading v1.15}
+@(#)CDS: CeltIC v10.10-p001_1 (64bit) 11/30/2010 03:35:01 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: AAE 10.10-p001 (64bit) 01/11/2011 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CTE 10.10-p001_1 (64bit) Nov 29 2010 23:31:49 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CPE v10.10-p003
+--- Starting "Encounter v10.10-s002_1" on Fri Apr 14 16:04:04 2017 (mem=56.1M) ---
+--- Running on cimeld53 (x86_64 w/Linux 3.2.0-4-amd64) ---
+This version was compiled on Tue Jan 11 22:20:02 PST 2011.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+<CMD> win
+*** Memory pool thread-safe mode activated.
+<CMD> loadConfig ../par/c35b4_std.conf 0
+Reading config file - ../par/c35b4_std.conf
+**WARN: (ENCSYT-709):	The next major release of EDI (11.1) will use the
+Multi-Mode/Multi-Corner (MMMC) architecture exclusively for configuration and
+control of some software features. The current configuration will continue to
+work in this release. But for compatibility with the future releases you
+should migrate your design to an MMMC style configuration. You can refer to
+the What's New document for this release for additional information on the
+11.1 migration to MMMC. In addition, you can run loadConfig with the
+-showEolWarnings option to identify specific command and configuration
+options that will no longer be supported.
+<CMD_INTERNAL> setUIVar rda_Input ui_netlist {../par/sources_verilog/filter_io.v ../par/VERILOG/filter_synth.v}
+<CMD> commitConfig
+**ERROR: **ERROR: (ENCVL-901):	Please enter top cell name.
+
+<CMD_INTERNAL> setUIVar rda_Input ui_settop 0
+<CMD_INTERNAL> setUIVar rda_Input ui_netlist {../par/sources_verilog/filter_io.v ../par/VERILOG/filter_synth.v}
+<CMD_INTERNAL> setUIVar rda_Input ui_topcell filter_
+<CMD> commitConfig
+**ERROR: **ERROR: (ENCSYT-16008):	Please specify technology file or a LEF file.
+
+<CMD> loadConfig ../par/c35b4_std.conf 0
+Reading config file - ../par/c35b4_std.conf
+<CMD> loadConfig ../par/c35b4_std.conf 0
+Reading config file - ../par/c35b4_std.conf
+<CMD> loadConfig ../par/c35b4_std.conf 0
+Reading config file - ../par/c35b4_std.conf
+**WARN: (ENCEXT-1085):	Option 'rda_Input(ui_res_scale)' used in configuration file '../par/c35b4_std.conf' is obsolete. The name will be converted into new format automatically if design is saved and then restored. Alternatively, update the configuration file to use names 'rda_Input(ui_preRoute_res)' and/or 'rda_Input(ui_postRoute_res)' for resistance scale factors to be used at preRoute/postRoute stages of the design . The obsolete name works in this release. But to avoid this warning and to ensure compatibility with future releases, update this option name.
+<CMD> loadConfig ../par/c35b4_std.conf 0
+Reading config file - ../par/c35b4_std.conf
+**WARN: (ENCEXT-1085):	Option 'rda_Input(ui_res_scale)' used in configuration file '../par/c35b4_std.conf' is obsolete. The name will be converted into new format automatically if design is saved and then restored. Alternatively, update the configuration file to use names 'rda_Input(ui_preRoute_res)' and/or 'rda_Input(ui_postRoute_res)' for resistance scale factors to be used at preRoute/postRoute stages of the design . The obsolete name works in this release. But to avoid this warning and to ensure compatibility with future releases, update this option name.
+<CMD_INTERNAL> setUIVar rda_Input ui_netlist {../par/VERILOG/filter_synth.v ../par/sources_verilog/filter_io.v}
+<CMD_INTERNAL> setUIVar rda_Input ui_settop 0
+<CMD> commitConfig
+**WARN: (ENCSYT-20004):	Both ui_leffile and ui_oa_reflib are defined. Standard Cell and Technology data will be read from the LEF files specified in ui_leffile. Libraries defined in ui_oa_reflib will be used to read custom layers from OA. If OA reference libraries are available, the recommended method is to only define ui_oa_reflib and not define ui_leffile. Using the OpenAccess information as the only source of technology removes the need to manually keep the two definitions in sync. 
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/c35b4.lef...
+**WARN: (ENCLF-228):	 ANTENNAOUTPUTDIFFAREA is specified and will be
+applied to any OUTPUT PIN or INOUT PIN without ANTENNADIFFAREA. This often
+causes a mismatch between process antenna violations found in Encounter
+(during routing or verify) and violations found by external physical
+verification tools. This global defaulting mechanism is obsolete in LEF
+5.5. The recommended solution is to remove ANTENNAOUTPUTDIFFAREA and add
+ANTENNADIFFAREA to all OUTPUT or INOUT PINS in the MACROS in order to
+avoid a mismatch in violations.
+**WARN: (ENCLF-230):	 ANTENNAINOUTDIFFAREA is specified and will be
+applied to any INOUT PIN without ANTENNADIFFAREA. This often causes a
+mismatch between process antenna violations found in Encounter (during
+routing or verify) and violations found by external physical
+verification tools. This global defaulting mechanism is obsolete in
+LEF 5.5. The recommended solution is to remove ANTENNAINOUTDIFFAREA
+and add ANTENNADIFFAREA to all INOUT PINS in the MACROS in order to
+avoid a mismatch in violations.
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/CORELIB.lef...
+Set DBUPerIGU to M2 pitch 1400.
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/IOLIB_4M.lef...
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SMP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC1P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC1P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC1P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC24P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SMP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC24SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (EMS-62):	Message <ENCLF-200> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message
+by using the set_message_limit <number> command.
+The message limit can be removed by using the unset_message_limit command.
+Note that setting a very large number using the set_message_limit command
+or removing the message limit using the unset_message_limit command can
+significantly increase the log file size.
+To suppress a message, use suppress_message command.
+
+Power Planner/ViaGen version 8.1.46 promoted on 02/17/2009.
+viaInitial starts at Fri Apr 14 16:15:07 2017
+viaInitial ends at Fri Apr 14 16:15:07 2017
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../par/VERILOG/filter_synth.v'
+Inserting temporary buffers to remove assignment statements.
+Reading verilog netlist '../par/sources_verilog/filter_io.v'
+
+*** Memory Usage v0.166 (Current mem = 461.836M, initial mem = 56.082M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=461.8M) ***
+Top level cell is filter_io.
+Reading common timing library '/softslin/AMS_410_CDS/liberty/c35_3.3V/c35_CORELIB.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD21' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD21' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD22' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD22' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD31' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD31' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD32' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD32' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI210' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI211' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2110' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2111' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2112' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI212' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI220' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI221' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI222' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI310' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI311' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI312' is not defined in the library.
+Message <TECHLIB-436> has exceeded the message display limit of '20'. setMessageLimit/set_message_limit sets the limit. unsetMessageLimit/unset_message_limit can be used to reset this.
+ read 248 cells in library 'c35_CORELIB_TYP' 
+Reading common timing library '/softslin/AMS_410_CDS/liberty/c35_3.3V/c35_IOLIB_4M.lib' ...
+ read 181 cells in library 'c35_IOLIB_TYP' 
+*** End library_loading (cpu=0.02min, mem=18.2M, fe_cpu=0.89min, fe_mem=480.0M) ***
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell filter_io ...
+*** Netlist is unique.
+** info: there are 469 modules.
+** info: there are 1879 stdCell insts.
+** info: there are 26 Pad insts.
+
+*** Memory Usage v0.166 (Current mem = 483.047M, initial mem = 56.082M) ***
+*info - Done with setDoAssign with 35 assigns removed and 0 assigns could not be removed.
+Total number of combinational cells: 144
+Total number of sequential cells: 89
+Total number of tristate cells: 14
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF12 BUF15 BUF2 BUF6 BUF4 BUF8 CLKBU12 CLKBU15 CLKBU2 CLKBU6 CLKBU4 CLKBU8
+Total number of usable buffers: 12
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKIN1 CLKIN0 CLKIN12 CLKIN10 CLKIN15 CLKIN3 CLKIN2 CLKIN6 CLKIN4 CLKIN8 INV1 INV0 INV12 INV10 INV15 INV3 INV2 INV6 INV4 INV8
+Total number of usable inverters: 20
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY12 DLY22 DLY32 DLY42
+Total number of identified usable delay cells: 4
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+*info: set bottom ioPad orient R0
+Initializing I/O assignment ...
+Adjusting Core to Left to: 50.2000. Core to Bottom to: 50.9000.
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Input Pin Transition Delay as 0.1 ps.
+PreRoute Cap Scale Factor :        1.00
+PreRoute Res Scale Factor :        1.00
+PostRoute Cap Scale Factor :       1.00
+PostRoute Res Scale Factor :       1.00
+PostRoute XCap Scale Factor :      1.00
+
+PreRoute Clock Cap Scale Factor :  1.00	[Derived from postRoute_cap (effortLevel low)]
+PreRoute Clock Res Scale Factor :  1.00	[Derived from postRoute_res (effortLevel low)]
+PostRoute Clock Cap Scale Factor : 1.00	[Derived from postRoute_cap (effortLevel low)]
+PostRoute Clock Res Scale Factor : 1.00	[Derived from postRoute_res (effortLevel low)]
+Reading Capacitance Table File /softslin/AMS_410_CDS/cds/HK_C35/LEF/encounter/c35b4.capTable ...
+Cap Table was created using Encounter 06.20-s087_1.
+Process name: C35B4.
+**WARN: (ENCOPT-3465):	The buffer cells were automatically identified. The command setBufFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+**WARN: (ENCOPT-3466):	The inverter cells were automatically identified. The command setInvFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+**WARN: (ENCOPT-3467):	The delay cells were automatically identified. The command setDelayFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+Set qxtech_file as /softslin/AMS_410_CDS/cds/HK_C35/LEF/fireIce/c35b4.tch
+Set qxlib_file as /softslin/AMS_410_CDS/cds/HK_C35/LEF/fireIce/c35b4_libs
+<CMD> fit
+<CMD> setDrawView fplan
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> selectInst io_CLK
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> deselectAll
+<CMD> selectInst io_CLK
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> deselectAll
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCSYT-6000):	No Object Selected.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> selectInst io_LDACb
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> deselectAll
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> selectInst io_Filter_In_6
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+<CMD> deselectAll
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**ERROR: (ENCOAX-503):	Can not open OA library 'TECH_C35B4'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+**WARN: (EMS-62):	Message <ENCOAX-503> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message
+by using the set_message_limit <number> command.
+The message limit can be removed by using the unset_message_limit command.
+Note that setting a very large number using the set_message_limit command
+or removing the message limit using the unset_message_limit command can
+significantly increase the log file size.
+To suppress a message, use suppress_message command.
+
+*** Memory Usage v0.166 (Current mem = 485.926M, initial mem = 56.082M) ***
+--- Ending "Encounter" (totcpu=0:01:00, real=0:12:45, mem=485.9M) ---

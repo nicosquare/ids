@@ -11,8 +11,8 @@ use ieee.std_logic_arith.all;
 library modelsim_lib;
 use modelsim_lib.util.all;
 
-library lib_VHDL;
---library lib_SYNTH;
+--library lib_VHDL;
+library lib_synth;
 
 entity bench_filter is
 end entity;  -- bench_filter

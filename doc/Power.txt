@@ -1,0 +1,61 @@
+****************************************
+Report : power
+        -analysis_effort low
+Design : FILTER
+Version: J-2014.09-SP2
+Date   : Fri Apr  7 15:09:44 2017
+****************************************
+
+
+Library(s) Used:
+
+    c35_CORELIB_TYP (File: /softslin/AMS_410_CDS/synopsys/c35_3.3V/c35_CORELIB_TYP.db)
+
+
+Operating Conditions: nom_pvt   Library: c35_CORELIB_TYP
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FILTER                 10k               c35_CORELIB_TYP
+DELAY_LINE             10k               c35_CORELIB_TYP
+coeff_ram              10k               c35_CORELIB_TYP
+MULT                   10k               c35_CORELIB_TYP
+ACCU                   10k               c35_CORELIB_TYP
+BUFF                   10k               c35_CORELIB_TYP
+fsm                    10k               c35_CORELIB_TYP
+ACCU_DW01_add_0        10k               c35_CORELIB_TYP
+ACCU_DW01_add_1        10k               c35_CORELIB_TYP
+MULT_DW02_mult_0       10k               c35_CORELIB_TYP
+MULT_DW01_add_0        10k               c35_CORELIB_TYP
+
+
+Global Operating Voltage = 3.3  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =   9.7785 mW   (87%)
+  Net Switching Power  =   1.5134 mW   (13%)
+                         ---------
+Total Dynamic Power    =  11.2919 mW  (100%)
+
+Cell Leakage Power     =   2.5436 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           8.9509        9.2378e-02        1.5420e+03            9.0432  (  80.09%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.8276            1.4211        1.0016e+03            2.2487  (  19.91%)
+--------------------------------------------------------------------------------------------------
+Total              9.7785 mW         1.5134 mW     2.5436e+03 pW        11.2919 mW

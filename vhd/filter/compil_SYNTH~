@@ -1,0 +1,5 @@
+vdel -lib  ${TP_PATH}/lib/lib_synth -all
+vlib ${TP_PATH}/lib/lib_synth
+vmap lib_synth ${TP_PATH}/lib/lib_synth 
+vcom +acc -work lib_synth filter_synth.vhdl
+

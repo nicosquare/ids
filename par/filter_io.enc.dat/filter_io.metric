@@ -1,0 +1,70 @@
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {426.4M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {427.4M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {428.4M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {429.4M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-genSpecOnly Clock.ctstch}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {447.9M}
+se::end_metric clockDesign {-genSpecOnly Clock.ctstch}
+se::start_metric clockDesign {-genSpecOnly Clock.ctstch}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {447.9M}
+se::end_metric clockDesign {-genSpecOnly Clock.ctstch}
+se::start_metric clockDesign {-specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {438.9M}
+se::end_metric clockDesign {-specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {439.9M}
+se::end_metric clockDesign {-specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {456.9M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {457.9M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {458.9M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {459.9M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {460.9M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::start_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}
+se::save_metric cputime {0:00:00}
+se::save_metric realtime {0:00:00}
+se::save_metric mem {462.5M}
+se::end_metric clockDesign {-specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS}

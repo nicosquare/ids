@@ -1,0 +1,130 @@
+#######################################################
+#                                                     #
+#  Encounter Command Logging File                     #
+#  Created on Fri Apr 14 16:52:10 2017                #
+#                                                     #
+#######################################################
+
+#@(#)CDS: Encounter v10.10-s002_1 (64bit) 01/11/2011 22:20 (Linux 2.6)
+#@(#)CDS: NanoRoute v10.10-s002 NR110110-1725/USR66-UB (database version 2.30, 109.2.1) {superthreading v1.15}
+#@(#)CDS: CeltIC v10.10-p001_1 (64bit) 11/30/2010 03:35:01 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: AAE 10.10-p001 (64bit) 01/11/2011 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: CTE 10.10-p001_1 (64bit) Nov 29 2010 23:31:49 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: CPE v10.10-p003
+
+win
+loadConfig c35b4_std.conf 0
+getenv ENCOUNTER_CONFIG_RELATIVE_CWD
+setDoAssign
+getIoFlowFlag
+setUIVar rda_Input ui_netlist {VERILOG/filter_synth.v sources_verilog/filter_io.v}
+setUIVar rda_Input ui_settop 0
+commitConfig
+fit
+setDrawView fplan
+setPreference MinFPModuleSize 1
+uiSetTool move
+uiSetTool select
+windowSelect -191.292 1378.328 238.235 1475.624
+windowSelect -174.680 1518.340 1493.590 431.472
+deselectAll
+zoomSelected
+windowSelect 1592.448 -151.143 -628.675 1491.104
+deselectAll
+deselectAll
+deselectAll
+windowSelect -630.674 1417.473 1550.186 -113.163
+deselectAll
+selectInst io_CLK
+ungroup
+ungroup
+deselectAll
+windowSelect -616.435 1407.981 1597.648 -155.879
+ungroup
+ungroup
+ungroup
+ungroup
+ungroup
+group
+ungroup
+group
+deselectAll
+saveDesign filter_io.enc
+zoomBox -434.530 1420.314 -417.779 1425.897
+windowSelect -15.784 1346.974 -11.203 1341.946
+windowSelect 10.139 1348.091 -25.841 1347.868
+uiSetTool move
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomSelected
+fit
+loadIoFile corners.io
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site standard -r 1 0.80 100 100 100 100
+uiSetTool select
+getIoFlowFlag
+fit
+addRing -spacing_bottom 10 -width_left 20 -width_bottom 20 -width_top 20 -spacing_top 10 -layer_bottom MET1 -center 1 -stacked_via_top_layer MET4 -width_right 20 -around core -jog_distance 0.7 -offset_bottom 0.7 -layer_top MET1 -threshold 0.7 -offset_left 0.7 -spacing_right 10 -spacing_left 10 -offset_right 0.7 -offset_top 0.7 -layer_right MET2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1 -layer_left MET2
+editSplit
+saveDesign filter_io.enc
+addStripe -block_ring_top_layer_limit MET3 -max_same_layer_jog_length 1.2 -padcore_ring_bottom_layer_limit MET1 -number_of_sets 5 -stacked_via_top_layer MET4 -padcore_ring_top_layer_limit MET3 -spacing 0.6 -xleft_offset 200 -xright_offset 200 -merge_stripes_value 0.7 -layer MET2 -block_ring_bottom_layer_limit MET1 -width 2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1
+addStripe -block_ring_top_layer_limit MET3 -max_same_layer_jog_length 1.2 -padcore_ring_bottom_layer_limit MET1 -number_of_sets 5 -stacked_via_top_layer MET4 -padcore_ring_top_layer_limit MET3 -spacing 0.6 -xleft_offset 200 -xright_offset 200 -merge_stripes_value 0.7 -layer MET2 -block_ring_bottom_layer_limit MET1 -width 2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1
+getIoFlowFlag
+clearGlobalNets
+globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+clearGlobalNets
+globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+clearGlobalNets
+globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+clearGlobalNets
+globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+sroute -connect { blockPin padPin padRing corePin } -layerChangeRange { MET1 MET4 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer MET1 -allowLayerChange 1 -targetViaTopLayer MET4 -crossoverViaTopLayer MET4 -targetViaBottomLayer MET1
+sroute -connect { blockPin padPin padRing corePin } -layerChangeRange { MET1 MET4 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer MET1 -allowLayerChange 1 -targetViaTopLayer MET4 -crossoverViaTopLayer MET4 -targetViaBottomLayer MET1
+saveDesign filter_io.enc
+setPlaceMode -fp false
+placeDesign -prePlaceOpt
+setPlaceMode -fp false
+placeDesign -prePlaceOpt
+panPage 0 1
+fit
+zoomIn
+fit
+checkPlace filter_io.checkPlace
+setDrawView place
+checkPlace filter_io.checkPlace
+setDrawView place
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+redraw
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -genSpecOnly Clock.ctstch
+clockDesign -genSpecOnly Clock.ctstch
+clockDesign -specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+saveDesign filter_io.enc

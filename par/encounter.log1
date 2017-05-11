@@ -1,0 +1,1579 @@
+Checking out Encounter license ...
+Encounter_Digital_Impl_Sys_XL 10.1 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+This Encounter release has been compiled with OA version 22.04-p001.
+
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2010.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v10.10-s002_1 (64bit) 01/11/2011 22:20 (Linux 2.6)
+@(#)CDS: NanoRoute v10.10-s002 NR110110-1725/USR66-UB (database version 2.30, 109.2.1) {superthreading v1.15}
+@(#)CDS: CeltIC v10.10-p001_1 (64bit) 11/30/2010 03:35:01 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: AAE 10.10-p001 (64bit) 01/11/2011 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CTE 10.10-p001_1 (64bit) Nov 29 2010 23:31:49 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CPE v10.10-p003
+--- Starting "Encounter v10.10-s002_1" on Fri Apr 14 16:52:10 2017 (mem=56.1M) ---
+--- Running on cimeld53 (x86_64 w/Linux 3.2.0-4-amd64) ---
+This version was compiled on Tue Jan 11 22:20:02 PST 2011.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+<CMD> win
+*** Memory pool thread-safe mode activated.
+<CMD> loadConfig c35b4_std.conf 0
+Reading config file - c35b4_std.conf
+**WARN: (ENCEXT-1085):	Option 'rda_Input(ui_res_scale)' used in configuration file 'c35b4_std.conf' is obsolete. The name will be converted into new format automatically if design is saved and then restored. Alternatively, update the configuration file to use names 'rda_Input(ui_preRoute_res)' and/or 'rda_Input(ui_postRoute_res)' for resistance scale factors to be used at preRoute/postRoute stages of the design . The obsolete name works in this release. But to avoid this warning and to ensure compatibility with future releases, update this option name.
+**WARN: (ENCSYT-709):	The next major release of EDI (11.1) will use the
+Multi-Mode/Multi-Corner (MMMC) architecture exclusively for configuration and
+control of some software features. The current configuration will continue to
+work in this release. But for compatibility with the future releases you
+should migrate your design to an MMMC style configuration. You can refer to
+the What's New document for this release for additional information on the
+11.1 migration to MMMC. In addition, you can run loadConfig with the
+-showEolWarnings option to identify specific command and configuration
+options that will no longer be supported.
+<CMD> getenv ENCOUNTER_CONFIG_RELATIVE_CWD
+<CMD> setDoAssign
+<CMD> getIoFlowFlag
+<CMD_INTERNAL> setUIVar rda_Input ui_netlist {VERILOG/filter_synth.v sources_verilog/filter_io.v}
+<CMD_INTERNAL> setUIVar rda_Input ui_settop 0
+<CMD> commitConfig
+**WARN: (ENCSYT-20004):	Both ui_leffile and ui_oa_reflib are defined. Standard Cell and Technology data will be read from the LEF files specified in ui_leffile. Libraries defined in ui_oa_reflib will be used to read custom layers from OA. If OA reference libraries are available, the recommended method is to only define ui_oa_reflib and not define ui_leffile. Using the OpenAccess information as the only source of technology removes the need to manually keep the two definitions in sync. 
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/c35b4.lef...
+**WARN: (ENCLF-228):	 ANTENNAOUTPUTDIFFAREA is specified and will be
+applied to any OUTPUT PIN or INOUT PIN without ANTENNADIFFAREA. This often
+causes a mismatch between process antenna violations found in Encounter
+(during routing or verify) and violations found by external physical
+verification tools. This global defaulting mechanism is obsolete in LEF
+5.5. The recommended solution is to remove ANTENNAOUTPUTDIFFAREA and add
+ANTENNADIFFAREA to all OUTPUT or INOUT PINS in the MACROS in order to
+avoid a mismatch in violations.
+**WARN: (ENCLF-230):	 ANTENNAINOUTDIFFAREA is specified and will be
+applied to any INOUT PIN without ANTENNADIFFAREA. This often causes a
+mismatch between process antenna violations found in Encounter (during
+routing or verify) and violations found by external physical
+verification tools. This global defaulting mechanism is obsolete in
+LEF 5.5. The recommended solution is to remove ANTENNAINOUTDIFFAREA
+and add ANTENNADIFFAREA to all INOUT PINS in the MACROS in order to
+avoid a mismatch in violations.
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/CORELIB.lef...
+Set DBUPerIGU to M2 pitch 1400.
+
+Loading Lef file /softslin/AMS_410_CDS/cds/HK_C35/LEF/c35b4/IOLIB_4M.lef...
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SMP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC16SP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC16SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC1P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC1P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC1P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24P' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC24P' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SMP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'Y' in macro 'BBC24SMP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SP' has no ANTENNADIFFAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (ENCLF-200):	Pin 'PAD' in macro 'BBC24SP' has no ANTENNAGATEAREA attribute defined.
+For any non-power/ground input or inout pin, The attribute should be
+defined if any area ratio antenna attribute is defined on any layer.
+**WARN: (EMS-62):	Message <ENCLF-200> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message
+by using the set_message_limit <number> command.
+The message limit can be removed by using the unset_message_limit command.
+Note that setting a very large number using the set_message_limit command
+or removing the message limit using the unset_message_limit command can
+significantly increase the log file size.
+To suppress a message, use suppress_message command.
+
+Power Planner/ViaGen version 8.1.46 promoted on 02/17/2009.
+viaInitial starts at Fri Apr 14 16:52:58 2017
+viaInitial ends at Fri Apr 14 16:52:58 2017
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'VERILOG/filter_synth.v'
+Inserting temporary buffers to remove assignment statements.
+Reading verilog netlist 'sources_verilog/filter_io.v'
+
+*** Memory Usage v0.166 (Current mem = 348.152M, initial mem = 56.082M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=348.2M) ***
+Top level cell is filter_io.
+Reading common timing library '/softslin/AMS_410_CDS/liberty/c35_3.3V/c35_CORELIB.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD21' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD21' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD22' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD22' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD31' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD31' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADD32' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADD32' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI210' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI211' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2110' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2111' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI2112' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI212' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI220' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI221' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI222' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI310' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI311' is not defined in the library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Q' of cell 'AOI312' is not defined in the library.
+Message <TECHLIB-436> has exceeded the message display limit of '20'. setMessageLimit/set_message_limit sets the limit. unsetMessageLimit/unset_message_limit can be used to reset this.
+ read 248 cells in library 'c35_CORELIB_TYP' 
+Reading common timing library '/softslin/AMS_410_CDS/liberty/c35_3.3V/c35_IOLIB_4M.lib' ...
+ read 181 cells in library 'c35_IOLIB_TYP' 
+*** End library_loading (cpu=0.02min, mem=18.6M, fe_cpu=0.12min, fe_mem=366.8M) ***
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell filter_io ...
+*** Netlist is unique.
+** info: there are 469 modules.
+** info: there are 1879 stdCell insts.
+** info: there are 26 Pad insts.
+
+*** Memory Usage v0.166 (Current mem = 369.996M, initial mem = 56.082M) ***
+*info - Done with setDoAssign with 35 assigns removed and 0 assigns could not be removed.
+Total number of combinational cells: 144
+Total number of sequential cells: 89
+Total number of tristate cells: 14
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF12 BUF15 BUF2 BUF6 BUF4 BUF8 CLKBU12 CLKBU15 CLKBU2 CLKBU6 CLKBU4 CLKBU8
+Total number of usable buffers: 12
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKIN1 CLKIN0 CLKIN12 CLKIN10 CLKIN15 CLKIN3 CLKIN2 CLKIN6 CLKIN4 CLKIN8 INV1 INV0 INV12 INV10 INV15 INV3 INV2 INV6 INV4 INV8
+Total number of usable inverters: 20
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY12 DLY22 DLY32 DLY42
+Total number of identified usable delay cells: 4
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+*info: set bottom ioPad orient R0
+Initializing I/O assignment ...
+Adjusting Core to Left to: 50.2000. Core to Bottom to: 50.9000.
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Input Pin Transition Delay as 0.1 ps.
+PreRoute Cap Scale Factor :        1.00
+PreRoute Res Scale Factor :        1.00
+PostRoute Cap Scale Factor :       1.00
+PostRoute Res Scale Factor :       1.00
+PostRoute XCap Scale Factor :      1.00
+
+PreRoute Clock Cap Scale Factor :  1.00	[Derived from postRoute_cap (effortLevel low)]
+PreRoute Clock Res Scale Factor :  1.00	[Derived from postRoute_res (effortLevel low)]
+PostRoute Clock Cap Scale Factor : 1.00	[Derived from postRoute_cap (effortLevel low)]
+PostRoute Clock Res Scale Factor : 1.00	[Derived from postRoute_res (effortLevel low)]
+Reading Capacitance Table File /softslin/AMS_410_CDS/cds/HK_C35/LEF/encounter/c35b4.capTable ...
+Cap Table was created using Encounter 06.20-s087_1.
+Process name: C35B4.
+**WARN: (ENCOPT-3465):	The buffer cells were automatically identified. The command setBufFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+**WARN: (ENCOPT-3466):	The inverter cells were automatically identified. The command setInvFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+**WARN: (ENCOPT-3467):	The delay cells were automatically identified. The command setDelayFootPrint is ignored. If you want to force the tool to honor this setting, you have to load a footprint file through the loadFootPrint command.
+Set qxtech_file as /softslin/AMS_410_CDS/cds/HK_C35/LEF/fireIce/c35b4.tch
+Set qxlib_file as /softslin/AMS_410_CDS/cds/HK_C35/LEF/fireIce/c35b4_libs
+<CMD> fit
+<CMD> setDrawView fplan
+<CMD> setPreference MinFPModuleSize 1
+<CMD> uiSetTool move
+<CMD> uiSetTool select
+<CMD> windowSelect -191.292 1378.328 238.235 1475.624
+<CMD> windowSelect -174.680 1518.340 1493.590 431.472
+<CMD> deselectAll
+<CMD> zoomSelected
+<CMD> windowSelect 1592.448 -151.143 -628.675 1491.104
+<CMD> deselectAll
+<CMD> deselectAll
+<CMD> deselectAll
+<CMD> windowSelect -630.674 1417.473 1550.186 -113.163
+<CMD> deselectAll
+<CMD> selectInst io_CLK
+<CMD> ungroup
+<CMD> ungroup
+<CMD> deselectAll
+<CMD> windowSelect -616.435 1407.981 1597.648 -155.879
+<CMD> ungroup
+<CMD> ungroup
+<CMD> ungroup
+<CMD> ungroup
+<CMD> ungroup
+<CMD> group
+<CMD> ungroup
+<CMD> group
+<CMD> deselectAll
+<CMD> saveDesign filter_io.enc
+Writing Netlist "filter_io.enc.dat/filter_io.v.gz" ...
+Saving configuration ...
+Saving preference file filter_io.enc.dat/enc.pref.tcl ...
+Saving floorplan ...
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+Saving placement ...
+*** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=381.5M) ***
+Saving route ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=381.5M) ***
+Writing DEF file 'filter_io.enc.dat/filter_io.def.gz', current time is Fri Apr 14 17:02:38 2017 ...
+unitPerMicron=1000, dbgMicronPerDBU=0.001000, unitPerDBU=1.000000
+DEF file 'filter_io.enc.dat/filter_io.def.gz' is written, current time is Fri Apr 14 17:02:38 2017 ...
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+<CMD> zoomBox -434.530 1420.314 -417.779 1425.897
+<CMD> windowSelect -15.784 1346.974 -11.203 1341.946
+<CMD> windowSelect 10.139 1348.091 -25.841 1347.868
+<CMD> uiSetTool move
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomSelected
+<CMD> fit
+<CMD> loadIoFile corners.io
+Reading IO assignment file "corners.io" ...
+**WARN: (ENCFP-780):	IO instance 'io_CLK' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_RESET' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_7' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_6' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_5' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_4' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_3' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_2' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_1' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_In_0' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_7' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_6' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_5' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_4' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_3' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_2' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_1' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_Filter_Out_0' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_ADC_Eocb' isn't defined in IO file, io placement might be incorrect
+**WARN: (ENCFP-780):	IO instance 'io_ADC_convstb' isn't defined in IO file, io placement might be incorrect
+**WARN: (EMS-62):	Message <ENCFP-780> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message
+by using the set_message_limit <number> command.
+The message limit can be removed by using the unset_message_limit command.
+Note that setting a very large number using the set_message_limit command
+or removing the message limit using the unset_message_limit command can
+significantly increase the log file size.
+To suppress a message, use suppress_message command.
+**WARN: (ENCFP-3108):	Not enough space to accomodate the ios for side 'N' between io 'PWR1' and 'PWR1'
+totIoWidth=100.0000, totFixedGap=0.0000, availWidth=0.0000
+IO: io_CLK has offset specified but is not the first IO for side N
+**WARN: (ENCFP-3108):	Not enough space to accomodate the ios for side 'S' between io 'GND1' and 'GND1'
+totIoWidth=100.0000, totFixedGap=0.0000, availWidth=0.0000
+IO: io_Filter_Out_4 has offset specified but is not the first IO for side S
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -site standard -r 1 0.80 100 100 100 100
+Adjusting Core to Left to: 100.6000. Core to Bottom to: 100.3000.
+**WARN: (ENCFP-325):	After proportional resize, all pre-routed wires will be removed.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> addRing -spacing_bottom 10 -width_left 20 -width_bottom 20 -width_top 20 -spacing_top 10 -layer_bottom MET1 -center 1 -stacked_via_top_layer MET4 -width_right 20 -around core -jog_distance 0.7 -offset_bottom 0.7 -layer_top MET1 -threshold 0.7 -offset_left 0.7 -spacing_right 10 -spacing_left 10 -offset_right 0.7 -offset_top 0.7 -layer_right MET2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1 -layer_left MET2
+
+The power planner created 8 wires.
+*** Ending Ring Generation (totcpu=0:00:00.0, real=0:00:00.0, mem=383.3M) ***
+<CMD> editSplit
+<CMD> saveDesign filter_io.enc
+**WARN: (ENCSYT-3036):	Design directory filter_io.enc.dat exists, rename it to filter_io.enc.dat.tmp.
+If saveDesign succeeds, it will be deleted.
+Writing Netlist "filter_io.enc.dat/filter_io.v.gz" ...
+Saving configuration ...
+Saving preference file filter_io.enc.dat/enc.pref.tcl ...
+Saving floorplan ...
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+Saving placement ...
+*** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=386.4M) ***
+Saving route ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=386.4M) ***
+Writing DEF file 'filter_io.enc.dat/filter_io.def.gz', current time is Fri Apr 14 17:22:42 2017 ...
+unitPerMicron=1000, dbgMicronPerDBU=0.001000, unitPerDBU=1.000000
+DEF file 'filter_io.enc.dat/filter_io.def.gz' is written, current time is Fri Apr 14 17:22:42 2017 ...
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+<CMD> addStripe -block_ring_top_layer_limit MET3 -max_same_layer_jog_length 1.2 -padcore_ring_bottom_layer_limit MET1 -number_of_sets 5 -stacked_via_top_layer MET4 -padcore_ring_top_layer_limit MET3 -spacing 0.6 -xleft_offset 200 -xright_offset 200 -merge_stripes_value 0.7 -layer MET2 -block_ring_bottom_layer_limit MET1 -width 2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1
+**WARN: (ENCPP-2008):	AddStripe option -remove_floating_stripe_over_block is ON so all fragmented stripes within a block will be removed.
+  To turn OFF, setAddStripeOption -remove_floating_stripe_over_block 0.
+
+Starting stripe generation ...
+Non-Default setAddStripeOption Settings :
+  NONE
+Stripe generation is complete; vias are now being generated.
+The power planner created 10 wires.
+<CMD> addStripe -block_ring_top_layer_limit MET3 -max_same_layer_jog_length 1.2 -padcore_ring_bottom_layer_limit MET1 -number_of_sets 5 -stacked_via_top_layer MET4 -padcore_ring_top_layer_limit MET3 -spacing 0.6 -xleft_offset 200 -xright_offset 200 -merge_stripes_value 0.7 -layer MET2 -block_ring_bottom_layer_limit MET1 -width 2 -nets {gnd! vdd!} -stacked_via_bottom_layer MET1
+**WARN: (ENCPP-2008):	AddStripe option -remove_floating_stripe_over_block is ON so all fragmented stripes within a block will be removed.
+  To turn OFF, setAddStripeOption -remove_floating_stripe_over_block 0.
+
+Starting stripe generation ...
+Non-Default setAddStripeOption Settings :
+  NONE
+Stripe generation is complete; vias are now being generated.
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (642.00, 395.55) (642.00, 1083.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (693.55, 395.55) (693.55, 1083.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (745.10, 395.55) (745.10, 1083.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (796.65, 395.55) (796.65, 1083.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (848.20, 395.55) (848.20, 1083.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (644.60, 365.55) (644.60, 1113.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (696.15, 365.55) (696.15, 1113.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (747.70, 365.55) (747.70, 1113.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (799.25, 365.55) (799.25, 1113.70).
+**WARN: (ENCPP-170):	The power planner failed to create a wire at (850.80, 365.55) (850.80, 1113.70).
+<CMD> getIoFlowFlag
+<CMD> clearGlobalNets
+<CMD> globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+<CMD> globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+<CMD> clearGlobalNets
+<CMD> globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+<CMD> globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+<CMD> clearGlobalNets
+<CMD> globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+<CMD> globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+<CMD> clearGlobalNets
+<CMD> globalNetConnect vdd! -type pgpin -pin vdd! -inst * -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin gnd! -inst * -module {}
+<CMD> globalNetConnect vdd! -type pgpin -pin A -inst PWR1 -module {}
+<CMD> globalNetConnect gnd! -type pgpin -pin A -inst GND1 -module {}
+<CMD> sroute -connect { blockPin padPin padRing corePin } -layerChangeRange { MET1 MET4 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer MET1 -allowLayerChange 1 -targetViaTopLayer MET4 -crossoverViaTopLayer MET4 -targetViaBottomLayer MET1
+*** Begin SPECIAL ROUTE on Fri Apr 14 17:36:57 2017 ***
+Sroute/fcroute version 8.1.46 promoted on 02/17/2009.
+SPECIAL ROUTE ran on directory: /tp/xph2sle/xph2sle021/FILTRE/par
+SPECIAL ROUTE ran on machine: cimeld53 (Linux 3.2.0-4-amd64 x86_64 2.00Ghz)
+
+Begin option processing ...
+(from .sroute_21032.conf) srouteConnectPowerBump set to false
+(from .sroute_21032.conf) routeSpecial set to true
+(from .sroute_21032.conf) srouteConnectStripe set to false
+(from .sroute_21032.conf) srouteCrossoverViaTopLayer set to 4
+(from .sroute_21032.conf) srouteFollowCorePinEnd set to 3
+(from .sroute_21032.conf) srouteFollowPadPin set to true
+(from .sroute_21032.conf) srouteJogControl set to "preferWithChanges differentLayer"
+(from .sroute_21032.conf) sroutePadPinAllPorts set to true
+(from .sroute_21032.conf) sroutePreserveExistingRoutes set to true
+(from .sroute_21032.conf) srouteTopLayerLimit set to 4
+(from .sroute_21032.conf) srouteTopTargetLayerLimit set to 4
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 794.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 10 layers, 4 routing layers, 1 overlap layer
+Read in 457 macros, 57 used
+Read in 71 components
+  39 core components: 39 unplaced, 0 placed, 0 fixed
+  28 pad components: 0 unplaced, 26 placed, 2 fixed
+  4 other components: 0 unplaced, 0 placed, 4 fixed
+Read in 26 logical pins
+Read in 26 nets
+Read in 7 special nets, 2 routed
+Read in 80 terminals
+Begin power routing ...
+**WARN: (ENCSR-1254):	Net vdd! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1253):	Net vdd3o! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3o! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3o! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3o! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3o! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net vdd3r1! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3r1! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3r1! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3r1! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3r1! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net vdd3r2! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3r2! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3r2! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3r2! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3r2! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1254):	Net gnd! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1253):	Net gnd3o! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net gnd3o! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd3o! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net gnd3o! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net gnd3o! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net gnd3r! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net gnd3r! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd3r! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net gnd3r! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net gnd3r! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0  open: 2
+  Number of Block ports routed: 0
+  Number of Core ports routed: 94
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 47
+End power routing: cpu: 0:00:00, real: 0:00:01, peak: 806.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 9 via definition ...Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+
+
+sroute post-processing starts at Fri Apr 14 17:36:58 2017
+The viaGen is rebuilding shadow vias for net gnd!.
+sroute post-processing ends at Fri Apr 14 17:36:58 2017
+
+sroute post-processing starts at Fri Apr 14 17:36:58 2017
+The viaGen is rebuilding shadow vias for net vdd!.
+sroute post-processing ends at Fri Apr 14 17:36:58 2017
+sroute: Total CPU time used = 0:0:0
+sroute: Total Real time used = 0:0:1
+sroute: Total Memory used = 4.18 megs
+sroute: Total Peak Memory used = 396.18 megs
+<CMD> sroute -connect { blockPin padPin padRing corePin } -layerChangeRange { MET1 MET4 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer MET1 -allowLayerChange 1 -targetViaTopLayer MET4 -crossoverViaTopLayer MET4 -targetViaBottomLayer MET1
+*** Begin SPECIAL ROUTE on Fri Apr 14 17:36:59 2017 ***
+Sroute/fcroute version 8.1.46 promoted on 02/17/2009.
+SPECIAL ROUTE ran on directory: /tp/xph2sle/xph2sle021/FILTRE/par
+SPECIAL ROUTE ran on machine: cimeld53 (Linux 3.2.0-4-amd64 x86_64 2.00Ghz)
+
+Begin option processing ...
+(from .sroute_21032.conf) srouteConnectPowerBump set to false
+(from .sroute_21032.conf) routeSpecial set to true
+(from .sroute_21032.conf) srouteConnectStripe set to false
+(from .sroute_21032.conf) srouteCrossoverViaTopLayer set to 4
+(from .sroute_21032.conf) srouteFollowCorePinEnd set to 3
+(from .sroute_21032.conf) srouteFollowPadPin set to true
+(from .sroute_21032.conf) srouteJogControl set to "preferWithChanges differentLayer"
+(from .sroute_21032.conf) sroutePadPinAllPorts set to true
+(from .sroute_21032.conf) sroutePreserveExistingRoutes set to true
+(from .sroute_21032.conf) srouteTopLayerLimit set to 4
+(from .sroute_21032.conf) srouteTopTargetLayerLimit set to 4
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 806.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 10 layers, 4 routing layers, 1 overlap layer
+Read in 457 macros, 57 used
+Read in 71 components
+  39 core components: 39 unplaced, 0 placed, 0 fixed
+  28 pad components: 0 unplaced, 26 placed, 2 fixed
+  4 other components: 0 unplaced, 0 placed, 4 fixed
+Read in 26 logical pins
+Read in 26 nets
+Read in 7 special nets, 2 routed
+Read in 80 terminals
+Begin power routing ...
+**WARN: (ENCSR-1254):	Net vdd! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1253):	Net vdd3o! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3o! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3o! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3o! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3o! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net vdd3r1! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3r1! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3r1! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3r1! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3r1! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net vdd3r2! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net vdd3r2! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net vdd3r2! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net vdd3r2! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net vdd3r2! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1254):	Net gnd! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1253):	Net gnd3o! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net gnd3o! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd3o! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net gnd3o! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net gnd3o! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+**WARN: (ENCSR-1253):	Net gnd3r! does not have standard cells to be routed. Please check net list.
+**WARN: (ENCSR-1254):	Net gnd3r! does not have block pins to be routed. Please check net list.
+**WARN: (ENCSR-1255):	Net gnd3r! does not have pad pins to create pad ring. Please check net list or port class. (must NOT be CORE class and must not be AREAIO subclass). 
+**WARN: (ENCSR-1256):	Net gnd3r! does not have CORE class pad pins to be routed.
+	Please check net list or port class.
+Net gnd3r! does not have AREAIO class pad pins to be routed.
+	Please check net list or port class.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0  open: 2
+  Number of Block ports routed: 0
+  Number of Core ports routed: 0
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 807.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 9 via definition ...
+sroute: Total CPU time used = 0:0:0
+sroute: Total Real time used = 0:0:0
+sroute: Total Memory used = 1.00 megs
+sroute: Total Peak Memory used = 397.19 megs
+<CMD> saveDesign filter_io.enc
+**WARN: (ENCSYT-3036):	Design directory filter_io.enc.dat exists, rename it to filter_io.enc.dat.tmp.
+If saveDesign succeeds, it will be deleted.
+Writing Netlist "filter_io.enc.dat/filter_io.v.gz" ...
+Saving configuration ...
+Saving preference file filter_io.enc.dat/enc.pref.tcl ...
+Saving floorplan ...
+Saving Drc markers ...
+... 2 Drc markers are saved ...
+Saving placement ...
+*** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=400.2M) ***
+Saving route ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=400.2M) ***
+Writing DEF file 'filter_io.enc.dat/filter_io.def.gz', current time is Fri Apr 14 17:37:24 2017 ...
+unitPerMicron=1000, dbgMicronPerDBU=0.001000, unitPerDBU=1.000000
+DEF file 'filter_io.enc.dat/filter_io.def.gz' is written, current time is Fri Apr 14 17:37:24 2017 ...
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+<CMD> setPlaceMode -fp false
+<CMD> placeDesign -prePlaceOpt
+**WARN: (ENCSP-9513):	Timing constraint file does not exist
+**WARN: (ENCSP-9514):	NonTimingDriven placement will be performed
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+#################################################################################
+# Design Stage: PreRoute
+# Design Mode: 90nm
+# Analysis Mode: non-MMMC non-OCV
+# Extraction Mode: default
+# Delay Calculation Options: engine=default signOff=true SIAware=false(opt)
+# Switching Delay Calculation Engine to feDC
+#################################################################################
+Calculate delays in Single mode...
+Topological Sorting (CPU = 0:00:00.0, MEM = 421.5M, InitMEM = 421.5M)
+Number of Loop : 0
+Start delay calculation (mem=421.496M)...
+**WARN: (ENCTS-403):	Delay calculation was forced to extrapolate table data outside of the characterized range. In some cases, extrapolation can reduce the accuracy of the delay calculation.  You can enable more detailed reporting of these cases by enabling the command 'setDelayCalMode -reportOutBound'.
+Delay calculation completed. (cpu=0:00:00.1 real=0:00:00.0 mem=425.762M 0)
+*** CDM Built up (cpu=0:00:00.1  real=0:00:00.0  mem= 425.8M) ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+*summary: 74 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.2) ***
+*** Starting "NanoPlace(TM) placement v0.942.2.2 (mem=425.8M)" ...
+Options: clkGateAware ignoreScan ignoreSpare pinGuide gpeffort=medium 
+**WARN: (ENCSP-9042):	Scan chains were not defined, -ignoreScan option will be ignored. 
+Please first define the scan chains before using this option.
+#std cell=1805 #block=0 (0 floating + 0 preplaced) #ioInst=32 #net=1928 #term=6987 #term/net=3.62, #fixedIo=32, #floatIo=0, #fixedPin=18, #floatPin=0
+stdCell: 1805 single + 0 double + 0 multi
+Total standard cell length = 22.1718 (mm), area = 0.2882 (mm^2)
+Average module density = 0.830.
+Density for the design = 0.830.
+       = stdcell_area 15837 (288233 um^2) / alloc_area 19090 (347438 um^2).
+Pin Density = 0.441.
+            = total # of pins 6987 / total Instance area 15837.
+Identified 6 spare or floating instances, with no clusters.
+Checking spec file integrity...
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              Est.  stn bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 426.2M
+Iteration  2: Total net bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              Est.  stn bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 426.2M
+Iteration  3: Total net bbox = 1.946e+04 (9.45e+03 1.00e+04)
+              Est.  stn bbox = 1.946e+04 (9.45e+03 1.00e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 426.2M
+Iteration  4: Total net bbox = 6.006e+04 (2.22e+04 3.78e+04)
+              Est.  stn bbox = 6.006e+04 (2.22e+04 3.78e+04)
+              cpu = 0:00:00.3 real = 0:00:00.0 mem = 426.2M
+Iteration  5: Total net bbox = 7.591e+04 (3.44e+04 4.16e+04)
+              Est.  stn bbox = 7.591e+04 (3.44e+04 4.16e+04)
+              cpu = 0:00:00.3 real = 0:00:01.0 mem = 426.2M
+Iteration  6: Total net bbox = 8.203e+04 (3.90e+04 4.30e+04)
+              Est.  stn bbox = 8.203e+04 (3.90e+04 4.30e+04)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 426.2M
+Iteration  7: Total net bbox = 9.042e+04 (4.52e+04 4.53e+04)
+              Est.  stn bbox = 1.186e+05 (5.80e+04 6.06e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 425.8M
+Iteration  8: Total net bbox = 9.042e+04 (4.52e+04 4.53e+04)
+              Est.  stn bbox = 1.186e+05 (5.80e+04 6.06e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 425.8M
+Iteration  9: Total net bbox = 1.033e+05 (4.93e+04 5.40e+04)
+              Est.  stn bbox = 1.033e+05 (4.93e+04 5.40e+04)
+              cpu = 0:00:00.4 real = 0:00:01.0 mem = 426.2M
+Iteration 10: Total net bbox = 1.075e+05 (5.27e+04 5.48e+04)
+              Est.  stn bbox = 1.361e+05 (6.59e+04 7.02e+04)
+              cpu = 0:00:01.1 real = 0:00:01.0 mem = 425.8M
+Iteration 11: Total net bbox = 1.160e+05 (5.97e+04 5.63e+04)
+              Est.  stn bbox = 1.451e+05 (7.33e+04 7.18e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 425.8M
+*** cost = 1.160e+05 (5.97e+04 5.63e+04) (cpu for global=0:00:02.0) real=0:00:02.0***
+Info: 0 clock gating cells identified, 0 (on average) moved
+Core Placement runtime cpu: 0:00:02.0 real: 0:00:02.0
+Starting refinePlace ...
+move report: placeLevelShifters moves 0 insts, mean move: 0.00 um, max move: 0.00 um
+  Spread Effort: high, pre-route mode.
+Finished Phase I. CPU Time = 0:00:00.3, Real Time = 0:00:00.0
+move report: preRPlace moves 1421 insts, mean move: 10.17 um, max move: 58.20 um
+	max move on inst (t_op/U2/ram_reg[29][4]): (896.00, 635.70) --> (928.20, 609.70)
+Placement tweakage begins.
+wire length = 1.243e+05 = 6.473e+04 H + 5.958e+04 V
+wire length = 1.089e+05 = 5.146e+04 H + 5.745e+04 V
+Placement tweakage ends.
+move report: tweak moves 888 insts, mean move: 22.79 um, max move: 214.20 um
+	max move on inst (t_op/U6/U40): (827.40, 648.70) --> (1041.60, 648.70)
+move report: rPlace moves 220 insts, mean move: 16.57 um, max move: 73.00 um
+	max move on inst (t_op/U2/U156): (1034.60, 895.70) --> (1013.60, 947.70)
+move report: overall moves 1548 insts, mean move: 17.78 um, max move: 222.60 um
+	max move on inst (t_op/U6/U40): (819.00, 648.70) --> (1041.60, 648.70)
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =       222.60 um
+  inst (t_op/U6/U40) with max move: (819, 648.7) -> (1041.6, 648.7)
+  mean    (X+Y) =        17.78 um
+Total instances flipped for WireLenOpt: 113
+Total instances flipped, including legalization: 178
+Total instances moved : 1548
+*** cpu=0:00:00.3   mem=426.8M  mem(used)=1.0M***
+Total net length = 1.125e+05 (5.374e+04 5.874e+04) (ext = 0.000e+00)
+*** End of Placement (cpu=0:00:02.6, real=0:00:02.0, mem=426.8M) ***
+default core: bins with density >  0.75 =   76 % ( 19 / 25 )
+Starting IO pin assignment...
+Completed IO pin assignment.
+**WARN: (ENCSP-9025):	No scan chain specified/traced.
+Starting congestion repair ...
+*** Starting trialRoute (mem=426.9M) ***
+
+There are 0 pin guide points passed to trialRoute.
+**WARN: (ENCTR-2325):	there are 11 nets connecting a pad term to a fterm without geometry and these nets will not be routed.  Type 'set trPrintIgnoredPadNets <limit>'  to see these nets.
+Options:  -noPinGuide
+
+Nr of prerouted/Fixed nets = 18
+routingBox: (700 1300) (1491700 1478100)
+coreBox:    (441000 440700) (1051800 1038700)
+Number of multi-gpin terms=56, multi-gpins=112, moved blk term=11/11
+
+Phase 1a route (0:00:00.0 429.8M):
+Est net length = 1.528e+05um = 7.338e+04H + 7.941e+04V
+Usage: (17.3%H 15.9%V) = (9.137e+04um 1.546e+05um) = (12902 11861)
+Obstruct: 10380 = 5190 (44.7%H) + 5190 (44.7%V)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1b route (0:00:00.0 432.3M):
+Usage: (17.2%H 15.9%V) = (9.109e+04um 1.546e+05um) = (12862 11861)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1c route (0:00:00.0 432.3M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1d route (0:00:00.0 432.3M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1e route (0:00:00.0 433.0M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  1:	1	 0.02%	8	 0.12%
+  2:	9	 0.14%	138	 2.15%
+  3:	65	 1.01%	74	 1.15%
+  4:	303	 4.72%	406	 6.32%
+  5:	582	 9.07%	592	 9.22%
+  6:	736	11.46%	708	11.03%
+  7:	784	12.21%	777	12.10%
+  8:	778	12.12%	832	12.96%
+  9:	569	 8.86%	582	 9.07%
+ 10:	635	 9.89%	1411	21.98%
+ 11:	0	 0.00%	1	 0.02%
+ 12:	0	 0.00%	3	 0.05%
+ 13:	38	 0.59%	0	 0.00%
+ 14:	89	 1.39%	0	 0.00%
+ 15:	1204	18.75%	3	 0.05%
+ 16:	627	 9.77%	0	 0.00%
+ 17:	0	 0.00%	52	 0.81%
+ 18:	0	 0.00%	59	 0.92%
+ 19:	0	 0.00%	47	 0.73%
+ 20:	0	 0.00%	727	11.32%
+
+Global route (cpu=0.0s real=0.0s 430.5M)
+Phase 1l route (0:00:00.1 430.1M):
+
+
+*** After '-updateRemainTrks' operation: 
+
+Usage: (17.5%H 16.0%V) = (9.235e+04um 1.558e+05um) = (13041 11947)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  0:	0	 0.00%	1	 0.02%
+  1:	1	 0.02%	11	 0.17%
+  2:	17	 0.26%	150	 2.34%
+  3:	84	 1.31%	113	 1.76%
+  4:	318	 4.95%	389	 6.06%
+  5:	600	 9.35%	563	 8.77%
+  6:	718	11.18%	701	10.92%
+  7:	787	12.26%	772	12.02%
+  8:	744	11.59%	823	12.82%
+  9:	563	 8.77%	595	 9.27%
+ 10:	630	 9.81%	1410	21.96%
+ 11:	0	 0.00%	1	 0.02%
+ 12:	0	 0.00%	3	 0.05%
+ 13:	38	 0.59%	0	 0.00%
+ 14:	90	 1.40%	0	 0.00%
+ 15:	1203	18.74%	3	 0.05%
+ 16:	627	 9.77%	0	 0.00%
+ 17:	0	 0.00%	52	 0.81%
+ 18:	0	 0.00%	59	 0.92%
+ 19:	0	 0.00%	47	 0.73%
+ 20:	0	 0.00%	727	11.32%
+
+
+
+*** Completed Phase 1 route (0:00:00.1 428.2M) ***
+
+
+Total length: 1.587e+05um, number of vias: 13629
+M1(H) length: 0.000e+00um, number of vias: 6925
+M2(V) length: 6.804e+04um, number of vias: 6066
+M3(H) length: 7.193e+04um, number of vias: 638
+M4(V) length: 1.877e+04um
+*** Completed Phase 2 route (0:00:00.1 431.2M) ***
+
+*** Finished all Phases (cpu=0:00:00.2 mem=431.2M) ***
+Peak Memory Usage was 438.5M 
+*** Finished trialRoute (cpu=0:00:00.2 mem=431.2M) ***
+
+CongRepair Bin Grid Size (width, height) = ( default_value , default_value )
+Trial Route Overflow 0.000000(H) 0.000000(V).
+Skipped repairing congestion.
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 3, real = 0: 0: 2, mem = 431.2M **
+<CMD> setPlaceMode -fp false
+<CMD> placeDesign -prePlaceOpt
+**WARN: (ENCSP-9513):	Timing constraint file does not exist
+**WARN: (ENCSP-9514):	NonTimingDriven placement will be performed
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+#################################################################################
+# Design Stage: PreRoute
+# Design Mode: 90nm
+# Analysis Mode: non-MMMC non-OCV
+# Extraction Mode: default
+# Delay Calculation Options: engine=default signOff=true SIAware=false(opt)
+# Switching Delay Calculation Engine to feDC
+#################################################################################
+Calculate delays in Single mode...
+Topological Sorting (CPU = 0:00:00.0, MEM = 430.9M, InitMEM = 430.9M)
+Number of Loop : 0
+Start delay calculation (mem=430.945M)...
+Delay calculation completed. (cpu=0:00:00.1 real=0:00:00.0 mem=431.332M 0)
+*** CDM Built up (cpu=0:00:00.2  real=0:00:00.0  mem= 431.3M) ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+*summary: 0 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.3) ***
+*** Starting "NanoPlace(TM) placement v0.942.2.2 (mem=431.3M)" ...
+Options: clkGateAware ignoreScan ignoreSpare pinGuide gpeffort=medium 
+**WARN: (ENCSP-9042):	Scan chains were not defined, -ignoreScan option will be ignored. 
+Please first define the scan chains before using this option.
+#std cell=1805 #block=0 (0 floating + 0 preplaced) #ioInst=32 #net=1928 #term=6987 #term/net=3.62, #fixedIo=32, #floatIo=0, #fixedPin=18, #floatPin=0
+stdCell: 1805 single + 0 double + 0 multi
+Total standard cell length = 22.1718 (mm), area = 0.2882 (mm^2)
+Average module density = 0.830.
+Density for the design = 0.830.
+       = stdcell_area 15837 (288233 um^2) / alloc_area 19090 (347438 um^2).
+Pin Density = 0.441.
+            = total # of pins 6987 / total Instance area 15837.
+Identified 6 spare or floating instances, with no clusters.
+Checking spec file integrity...
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              Est.  stn bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 431.9M
+Iteration  2: Total net bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              Est.  stn bbox = 2.006e+04 (9.99e+03 1.01e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 431.9M
+Iteration  3: Total net bbox = 1.946e+04 (9.45e+03 1.00e+04)
+              Est.  stn bbox = 1.946e+04 (9.45e+03 1.00e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 432.0M
+Iteration  4: Total net bbox = 6.006e+04 (2.22e+04 3.78e+04)
+              Est.  stn bbox = 6.006e+04 (2.22e+04 3.78e+04)
+              cpu = 0:00:00.3 real = 0:00:00.0 mem = 432.0M
+Iteration  5: Total net bbox = 7.591e+04 (3.44e+04 4.16e+04)
+              Est.  stn bbox = 7.591e+04 (3.44e+04 4.16e+04)
+              cpu = 0:00:00.3 real = 0:00:00.0 mem = 432.0M
+Iteration  6: Total net bbox = 8.203e+04 (3.90e+04 4.30e+04)
+              Est.  stn bbox = 8.203e+04 (3.90e+04 4.30e+04)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 432.0M
+Iteration  7: Total net bbox = 9.042e+04 (4.52e+04 4.53e+04)
+              Est.  stn bbox = 1.186e+05 (5.80e+04 6.06e+04)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 431.3M
+Iteration  8: Total net bbox = 9.042e+04 (4.52e+04 4.53e+04)
+              Est.  stn bbox = 1.186e+05 (5.80e+04 6.06e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 431.3M
+Iteration  9: Total net bbox = 1.033e+05 (4.93e+04 5.40e+04)
+              Est.  stn bbox = 1.033e+05 (4.93e+04 5.40e+04)
+              cpu = 0:00:00.4 real = 0:00:00.0 mem = 432.0M
+Iteration 10: Total net bbox = 1.075e+05 (5.27e+04 5.48e+04)
+              Est.  stn bbox = 1.361e+05 (6.59e+04 7.02e+04)
+              cpu = 0:00:01.0 real = 0:00:01.0 mem = 431.3M
+Iteration 11: Total net bbox = 1.160e+05 (5.97e+04 5.63e+04)
+              Est.  stn bbox = 1.451e+05 (7.33e+04 7.18e+04)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 431.3M
+*** cost = 1.160e+05 (5.97e+04 5.63e+04) (cpu for global=0:00:02.0) real=0:00:01.0***
+Info: 0 clock gating cells identified, 0 (on average) moved
+Core Placement runtime cpu: 0:00:02.0 real: 0:00:01.0
+Starting refinePlace ...
+move report: placeLevelShifters moves 0 insts, mean move: 0.00 um, max move: 0.00 um
+  Spread Effort: high, pre-route mode.
+Finished Phase I. CPU Time = 0:00:00.3, Real Time = 0:00:00.0
+move report: preRPlace moves 1421 insts, mean move: 10.17 um, max move: 58.20 um
+	max move on inst (t_op/U2/ram_reg[29][4]): (896.00, 635.70) --> (928.20, 609.70)
+Placement tweakage begins.
+wire length = 1.243e+05 = 6.473e+04 H + 5.958e+04 V
+wire length = 1.089e+05 = 5.146e+04 H + 5.745e+04 V
+Placement tweakage ends.
+move report: tweak moves 888 insts, mean move: 22.79 um, max move: 214.20 um
+	max move on inst (t_op/U6/U40): (827.40, 648.70) --> (1041.60, 648.70)
+move report: rPlace moves 220 insts, mean move: 16.57 um, max move: 73.00 um
+	max move on inst (t_op/U2/U156): (1034.60, 895.70) --> (1013.60, 947.70)
+move report: overall moves 1548 insts, mean move: 17.78 um, max move: 222.60 um
+	max move on inst (t_op/U6/U40): (819.00, 648.70) --> (1041.60, 648.70)
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =       222.60 um
+  inst (t_op/U6/U40) with max move: (819, 648.7) -> (1041.6, 648.7)
+  mean    (X+Y) =        17.78 um
+Total instances flipped for WireLenOpt: 113
+Total instances flipped, including legalization: 178
+Total instances moved : 1548
+*** cpu=0:00:00.3   mem=431.3M  mem(used)=0.0M***
+Total net length = 1.125e+05 (5.374e+04 5.874e+04) (ext = 0.000e+00)
+*** End of Placement (cpu=0:00:02.4, real=0:00:02.0, mem=431.3M) ***
+default core: bins with density >  0.75 =   76 % ( 19 / 25 )
+Starting IO pin assignment...
+Completed IO pin assignment.
+**WARN: (ENCSP-9025):	No scan chain specified/traced.
+Starting congestion repair ...
+*** Starting trialRoute (mem=431.3M) ***
+
+There are 0 pin guide points passed to trialRoute.
+**WARN: (ENCTR-2325):	there are 11 nets connecting a pad term to a fterm without geometry and these nets will not be routed.  Type 'set trPrintIgnoredPadNets <limit>'  to see these nets.
+Options:  -noPinGuide
+
+Nr of prerouted/Fixed nets = 18
+routingBox: (700 1300) (1491700 1478100)
+coreBox:    (441000 440700) (1051800 1038700)
+Number of multi-gpin terms=56, multi-gpins=112, moved blk term=11/11
+
+Phase 1a route (0:00:00.0 433.4M):
+Est net length = 1.528e+05um = 7.338e+04H + 7.941e+04V
+Usage: (17.3%H 15.9%V) = (9.137e+04um 1.546e+05um) = (12902 11861)
+Obstruct: 10380 = 5190 (44.7%H) + 5190 (44.7%V)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1b route (0:00:00.0 435.9M):
+Usage: (17.2%H 15.9%V) = (9.109e+04um 1.546e+05um) = (12862 11861)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1c route (0:00:00.0 435.9M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1d route (0:00:00.0 435.9M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Phase 1e route (0:00:00.0 436.6M):
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Usage: (17.2%H 15.9%V) = (9.066e+04um 1.543e+05um) = (12800 11836)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  1:	1	 0.02%	8	 0.12%
+  2:	9	 0.14%	138	 2.15%
+  3:	65	 1.01%	74	 1.15%
+  4:	303	 4.72%	406	 6.32%
+  5:	582	 9.07%	592	 9.22%
+  6:	736	11.46%	708	11.03%
+  7:	784	12.21%	777	12.10%
+  8:	778	12.12%	832	12.96%
+  9:	569	 8.86%	582	 9.07%
+ 10:	635	 9.89%	1411	21.98%
+ 11:	0	 0.00%	1	 0.02%
+ 12:	0	 0.00%	3	 0.05%
+ 13:	38	 0.59%	0	 0.00%
+ 14:	89	 1.39%	0	 0.00%
+ 15:	1204	18.75%	3	 0.05%
+ 16:	627	 9.77%	0	 0.00%
+ 17:	0	 0.00%	52	 0.81%
+ 18:	0	 0.00%	59	 0.92%
+ 19:	0	 0.00%	47	 0.73%
+ 20:	0	 0.00%	727	11.32%
+
+Global route (cpu=0.0s real=0.0s 434.0M)
+Phase 1l route (0:00:00.1 433.7M):
+
+
+*** After '-updateRemainTrks' operation: 
+
+Usage: (17.5%H 16.0%V) = (9.235e+04um 1.558e+05um) = (13041 11947)
+Overflow: 0 = 0 (0.00% H) + 0 (0.00% V)
+
+Congestion distribution:
+
+Remain	cntH		cntV
+--------------------------------------
+--------------------------------------
+  0:	0	 0.00%	1	 0.02%
+  1:	1	 0.02%	11	 0.17%
+  2:	17	 0.26%	150	 2.34%
+  3:	84	 1.31%	113	 1.76%
+  4:	318	 4.95%	389	 6.06%
+  5:	600	 9.35%	563	 8.77%
+  6:	718	11.18%	701	10.92%
+  7:	787	12.26%	772	12.02%
+  8:	744	11.59%	823	12.82%
+  9:	563	 8.77%	595	 9.27%
+ 10:	630	 9.81%	1410	21.96%
+ 11:	0	 0.00%	1	 0.02%
+ 12:	0	 0.00%	3	 0.05%
+ 13:	38	 0.59%	0	 0.00%
+ 14:	90	 1.40%	0	 0.00%
+ 15:	1203	18.74%	3	 0.05%
+ 16:	627	 9.77%	0	 0.00%
+ 17:	0	 0.00%	52	 0.81%
+ 18:	0	 0.00%	59	 0.92%
+ 19:	0	 0.00%	47	 0.73%
+ 20:	0	 0.00%	727	11.32%
+
+
+
+*** Completed Phase 1 route (0:00:00.1 431.8M) ***
+
+
+Total length: 1.587e+05um, number of vias: 13629
+M1(H) length: 0.000e+00um, number of vias: 6925
+M2(V) length: 6.804e+04um, number of vias: 6066
+M3(H) length: 7.193e+04um, number of vias: 638
+M4(V) length: 1.877e+04um
+*** Completed Phase 2 route (0:00:00.1 431.7M) ***
+
+*** Finished all Phases (cpu=0:00:00.2 mem=431.7M) ***
+Peak Memory Usage was 442.1M 
+*** Finished trialRoute (cpu=0:00:00.2 mem=431.7M) ***
+
+CongRepair Bin Grid Size (width, height) = ( default_value , default_value )
+Trial Route Overflow 0.000000(H) 0.000000(V).
+Skipped repairing congestion.
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 3, real = 0: 0: 3, mem = 431.7M **
+<CMD> panPage 0 1
+<CMD> fit
+<CMD> zoomIn
+<CMD> fit
+<CMD> checkPlace filter_io.checkPlace
+Begin checking placement ... (start mem=422.9M, init mem=422.9M)
+*info: Placed = 1805
+*info: Unplaced = 0
+IO instance overlap:4
+Placement Density:82.96%(288233/347438)
+Finished checkPlace (cpu: total=0:00:00.0, vio checks=0:00:00.0; mem=422.9M)
+<CMD> setDrawView place
+<CMD> checkPlace filter_io.checkPlace
+Begin checking placement ... (start mem=423.4M, init mem=423.4M)
+*info: Placed = 1805
+*info: Unplaced = 0
+IO instance overlap:4
+Placement Density:82.96%(288233/347438)
+Finished checkPlace (cpu: total=0:00:00.0, vio checks=0:00:00.0; mem=423.4M)
+<CMD> setDrawView place
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 425.4M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 426.4M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 426.4M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 427.4M **
+<CMD> redraw
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 427.4M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 428.4M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 428.4M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 429.4M **
+**WARN: (ENCCK-7003):	Command "addCTSCellList" is obsolete. Use "specifyClockTree -update {AutoCTSRootPin clkname Buffer bufferlist ...}" as an alternative. The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove "addCTSCellList" from your script.
+<CMD> clockDesign -genSpecOnly Clock.ctstch
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 429.4M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> createClockTreeSpec -output Clock.ctstch
+Checking spec file integrity...
+
+******* createClockTreeSpec begin *******
+Options:  -output Clock.ctstch 
+CTE Mode
+New Clock Spec Generation is ON.
+New CTE tracing is ON.
+Handle Multi Mode on mixed active views: default_view_hold default_view_setup.
+*Info: set_clock_latency is converted to MacroModel and saved in CTS spec file
+Total 0 clock roots are extracted.
+createClockTreeSpec invoking cleanupSpecifyClockTree
+Checking spec file integrity...
+
+Reading clock tree spec file 'Clock.ctstch' ...
+
+
+***** !! NOTE !! *****
+
+CTS treats D-pins and I/O pins as non-synchronous pins by default.
+If you want to change the behavior, you need to use the SetDPinAsSync
+or SetIoPinAsSync statement in the clock tree specification file,
+or use the setCTSMode -traceDPinAsLeaf {true|false} command,
+or use the setCTSMode -traceIoPinAsLeaf {true|false} command
+before specifyClockTree command.
+
+*** End specifyClockTree (cpu=0:00:00.0, real=0:00:00.0, mem=447.9M) ***
+*** End createClockTreeSpec (cpu=0:00:00.1, real=0:00:00.0, mem=447.9M) ***
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 447.9M **
+**WARN: (ENCCK-7003):	Command "addCTSCellList" is obsolete. Use "specifyClockTree -update {AutoCTSRootPin clkname Buffer bufferlist ...}" as an alternative. The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove "addCTSCellList" from your script.
+<CMD> clockDesign -genSpecOnly Clock.ctstch
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 447.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> createClockTreeSpec -output Clock.ctstch
+Checking spec file integrity...
+
+******* createClockTreeSpec begin *******
+Options:  -output Clock.ctstch 
+CTE Mode
+New Clock Spec Generation is ON.
+New CTE tracing is ON.
+Handle Multi Mode on mixed active views: default_view_hold default_view_setup.
+*Info: set_clock_latency is converted to MacroModel and saved in CTS spec file
+Total 0 clock roots are extracted.
+createClockTreeSpec invoking cleanupSpecifyClockTree
+Checking spec file integrity...
+
+Reading clock tree spec file 'Clock.ctstch' ...
+
+
+***** !! NOTE !! *****
+
+CTS treats D-pins and I/O pins as non-synchronous pins by default.
+If you want to change the behavior, you need to use the SetDPinAsSync
+or SetIoPinAsSync statement in the clock tree specification file,
+or use the setCTSMode -traceDPinAsLeaf {true|false} command,
+or use the setCTSMode -traceIoPinAsLeaf {true|false} command
+before specifyClockTree command.
+
+*** End specifyClockTree (cpu=0:00:00.0, real=0:00:00.0, mem=447.9M) ***
+*** End createClockTreeSpec (cpu=0:00:00.1, real=0:00:00.0, mem=447.9M) ***
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 447.9M **
+<CMD> clockDesign -specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 447.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 438.9M **
+<CMD> clockDesign -specFile {constraints/ctgen.ctstch Clock.ctstch} -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 438.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 439.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 455.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 456.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 456.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 457.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 457.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 458.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 458.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 459.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 459.9M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 460.9M **
+<CMD> clockDesign -specFile constraints/ctgen.ctstch -outDir clock_report -fixedInstBeforeCTS
+**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 461.5M **
+setCTSMode -moveGateLimit 25
+<clockDesign INFO> 'setCTSMode -routeClkNet true' is set inside clockDesign.
+
+<clockDesign CMD> cleanupSpecifyClockTree
+<clockDesign CMD> specifyClockTree -file constraints/ctgen.ctstch
+Checking spec file integrity...
+
+Reading clock tree spec file 'constraints/ctgen.ctstch' ...
+
+**ERROR: (ENCCK-543):	CTS cannot find terminal CSx specified with the AutoCTSRootPin statement.
+**ERROR: (ENCCK-427):	The clock tree specification file contains an error at line 1: AutoCTSRootPin CSx
+
+Usage: specifyClockTree [-help] [-dont_use]
+                        [-create <string> | -delete <string> | -update <string> | -file <string> | -template ]
+
+-help                                 # Prints out the command usage
+-template                             # Creates a sample CTS template file
+                                      # template.ctstch. (bool, optional)
+-file <string>                        # Specifies the name of the clock tree
+                                      # specification file. (string, optional)
+-dont_use                             # Excludes buffers from CTS file defined
+                                      # as dont_use : true in the .lib file.
+                                      # (bool, optional)
+-update <string>                      # (string, optional)
+-delete <string>                      # (string, optional)
+-create <string>                      # (string, optional)
+
+
+**ERROR: (ENCSYC-194):	Incorrect usage for command 'specifyClockTree'.
+**ERROR: (ENCCK-9000):	**clockDesign ... cpu = 0:00:00, real = 0:00:00, mem = 462.5M **
+<CMD> saveDesign filter_io.enc
+**WARN: (ENCSYT-3036):	Design directory filter_io.enc.dat exists, rename it to filter_io.enc.dat.tmp.
+If saveDesign succeeds, it will be deleted.
+Writing Netlist "filter_io.enc.dat/filter_io.v.gz" ...
+Saving configuration ...
+Saving preference file filter_io.enc.dat/enc.pref.tcl ...
+Saving floorplan ...
+Saving Drc markers ...
+... 6 Drc markers are saved ...
+Saving placement ...
+*** Completed savePlace (cpu=0:00:00.0 real=0:00:01.0 mem=465.8M) ***
+Saving route ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=465.8M) ***
+Writing DEF file 'filter_io.enc.dat/filter_io.def.gz', current time is Fri Apr 14 17:57:09 2017 ...
+unitPerMicron=1000, dbgMicronPerDBU=0.001000, unitPerDBU=1.000000
+DEF file 'filter_io.enc.dat/filter_io.def.gz' is written, current time is Fri Apr 14 17:57:09 2017 ...
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+
+*** Memory Usage v0.166 (Current mem = 466.777M, initial mem = 56.082M) ***
+--- Ending "Encounter" (totcpu=0:03:03, real=1:05:04, mem=466.8M) ---
