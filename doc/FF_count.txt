@@ -1,0 +1,52 @@
+nferred memory devices in process
+        in routine DELAY_LINE line 28 in file
+                '/tp/xph2sle/xph2sle021/FILTRE/vhd/filter/delayline.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        x_reg        | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine coeff_ram line 48 in file
+                '/tp/xph2sle/xph2sle021/FILTRE/vhd/filter/coeff_ram.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ram_reg       | Flip-flop |  148  |  Y  | N  | Y  | N  | N  | N  | N  |
+|       ram_reg       | Flip-flop |  108  |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine ACCU line 21 in file
+                '/tp/xph2sle/xph2sle021/FILTRE/vhd/filter/accu.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      ACCU_reg       | Flip-flop |  21   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine BUFF line 23 in file
+                '/tp/xph2sle/xph2sle021/FILTRE/vhd/filter/buff.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Buff_out_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine fsm line 42 in file
+                '/tp/xph2sle/xph2sle021/FILTRE/vhd/filter/fsm.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   Tap_Number_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|  Current_State_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+LA FSM TIENE UN CODAGE COMPACTO YA QUE USA 3 FF PARA 5 ESTADOS
